@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js" integrity="sha512-Mf/xUqfWvDIr+1B6zfnIDIiG7XHzyP/guXUWgV6PgaQoIFeXkJQR5XWh9fqAiCiRCpemabt3naV4jhDWVnuYDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@100;400&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: pink;
+            overflow: hidden;
+        }
+        .text{
+            max-width: 80%;
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            
+        }
+        .text div{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="text">Принцесса моя, я очень тебя люблю♡. Ты лучшая из всех кого я встречал и я хочу провести с тобой всю жизнь. Честно, трудно просыпаться утром, не видя тебя рядом, на одной кровати. Очень жду момент когда мы снова увидимся. И не обращай внимания на сны, ты подарила мне жизнь и я тебя не брошу) Целую♡♡♡ </div>
+    <script>
+        const text = document.querySelector('.text');
+
+        const splitText = (el) => {
+            el.innerHTML = el.textContent.replace(/(\S*)/g, m => {
+                return `<div class="word">` +
+                    m.replace(/(-|#|@)?\S(-|#|@)?/g, "<div class='letter'>$&</div>") +
+                    `</div>`;
+            });
+            return el;
+        };
+
+        const split = splitText(text);
+
+        function random(min, max){
+            return (Math.random() * (max - min)) + min;
+        }
+
+        console.log(split.querySelectorAll('.letter'));
+        Array.from(split.querySelectorAll('.letter')).forEach((el,idx) => {
+            TweenMax.from(el, 2.5, {
+                opacity: 0,
+                scale: 0.1,
+                x: random(-250, 500),
+                y: random(-250, 500),
+                z: random(-250, 500),
+                delay: idx * 0.05,
+                repeat: 0
+            })
+        })
+    </script>
+</body>
+</html>
