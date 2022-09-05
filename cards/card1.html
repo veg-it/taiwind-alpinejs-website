@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /** Montserrat Regular **/
+        @font-face {
+            font-family: "Montserrat";
+            font-weight: 400;
+            font-style: normal;
+            src: url("fonts/Montserrat/Montserrat-Regular.woff2") format("woff2"),
+                url("fonts/Montserrat/Montserrat-Regular.woff") format("woff");
+        }
+        /** Montserrat SemiBold **/
+        @font-face {
+            font-family: "Montserrat";
+            font-weight: 600;
+            font-style: normal;
+            src: url("fonts/Montserrat/Montserrat-SemiBold.woff2") format("woff2"),
+                url("fonts/Montserrat/Montserrat-SemiBold.woff") format("woff");
+        }
+        @font-face {
+            font-family: "Montserrat";
+            font-weight: 700;
+            src: url("fonts/Montserrat/Montserrat-Bold.woff2") format("woff2"),
+                url("fonts/Montserrat/Montserrat-Bold.woff") format("woff");
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #E5E5E5;
+            height: 100vh;
+        }
+        .card-deck{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .card{
+            background: #fff;
+            width: 255px;
+            height: 355px;
+            padding: 10px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-family: 'Montserrat';
+            position: relative;
+            margin: 15px;
+        }
+        .card img{
+            width: 97px;
+            height: 132px;
+            margin: 30px auto;
+        }
+        .card-body{
+            background: rgba(140, 50, 19, 0.06);
+            padding: 20px;
+            border-radius: 20px;   
+        }
+        .card-body span{
+            color: #8C3213;
+            padding: 16px;
+            background-color: #fff;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+            border-radius: 90px;
+            display: flex;
+            transition: 0.4s all ease;
+        }
+        .card-body span:hover{
+            background: #8C3213;
+        }
+        .card-body span:hover > img{
+            filter: brightness(0) invert(1);
+        }
+        .card-body span img{
+            width: 16px;
+            height: 16px;
+            margin: 0;
+            transition: 0.4s all ease;
+        }
+        .card-order-info{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 17px;
+        }
+        .card-header{
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+        }
+        .card-available{
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #1E6140;
+        }
+        .card-price{
+
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+            color: #84BE51
+        }
+        .card-count{
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+        }
+        .btn-icon{
+            position: absolute;
+            top: -10px;
+            right: 20px;
+        }
+        .btn-icon img{
+            width: 16px;
+            height: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-deck">
+        <div class="card">
+            <img src="img/card1/card1.svg" alt="" srcset="">
+            <div class="card-body">
+                <div class="card-about">
+                    <p class="card-header">Петунія Софістика F1</p>
+                    <p class="card-available">В наявності</p>
+                </div>
+                <div class="card-order-info">
+                    <div>
+                        <p class="card-price">20 грн</p>
+                        <p class="card-count">1 шт</p>
+                    </div>
+                    <span>
+                        <img src="img/card1/cart.svg" alt="">
+                    </span>
+                </div>
+            </div>
+            <span class="btn-icon"><img src="img/card1/icon1.svg" alt=""></span>
+        </div>
+        <div class="card">
+            <img src="img/card1/card1.svg" alt="" srcset="">
+            <div class="card-body">
+                <div class="card-about">
+                    <p class="card-header">Петунія Софістика F1</p>
+                    <p class="card-available">В наявності</p>
+                </div>
+                <div class="card-order-info">
+                    <div>
+                        <p class="card-price">20 грн</p>
+                        <p class="card-count">1 шт</p>
+                    </div>
+                    <span>
+                        <img src="img/card1/cart.svg" alt="">
+                    </span>
+                </div>
+            </div>
+            <span class="btn-icon"><img src="img/card1/icon1.svg" alt=""></span>
+        </div>
+        <div class="card">
+            <img src="img/card1/card1.svg" alt="" srcset="">
+            <div class="card-body">
+                <div class="card-about">
+                    <p class="card-header">Петунія Софістика F1</p>
+                    <p class="card-available">В наявності</p>
+                </div>
+                <div class="card-order-info">
+                    <div>
+                        <p class="card-price">20 грн</p>
+                        <p class="card-count">1 шт</p>
+                    </div>
+                    <span>
+                        <img src="img/card1/cart.svg" alt="">
+                    </span>
+                </div>
+            </div>
+            <span class="btn-icon"><img src="img/card1/icon1.svg" alt=""></span>
+        </div>
+        <div class="card">
+            <img src="img/card1/card1.svg" alt="" srcset="">
+            <div class="card-body">
+                <div class="card-about">
+                    <p class="card-header">Петунія Софістика F1</p>
+                    <p class="card-available">В наявності</p>
+                </div>
+                <div class="card-order-info">
+                    <div>
+                        <p class="card-price">20 грн</p>
+                        <p class="card-count">1 шт</p>
+                    </div>
+                    <span>
+                        <img src="img/card1/cart.svg" alt="">
+                    </span>
+                </div>
+            </div>
+            <span class="btn-icon"><img src="img/card1/icon1.svg" alt=""></span>
+        </div>
+    </div>
+    
+</body>
+</html>
