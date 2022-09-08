@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js" integrity="sha512-Mf/xUqfWvDIr+1B6zfnIDIiG7XHzyP/guXUWgV6PgaQoIFeXkJQR5XWh9fqAiCiRCpemabt3naV4jhDWVnuYDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js" integrity="sha512-YzMW3OzvgtVpIIPPpjnCy8wVTq5slHRrxnLH1oD5dkVjZf8+8DJYd+GYmmWXZNmroTqKXFFzFS3XZ/LBvaNgZg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@100;400&display=swap');
+    body{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+    .main{
+      height: 100vh;
+    }
+    .head{
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 5rem;
+    }
+    .head p{
+      width: 80%;
+    }
+    .head-1{
+      background-color: aquamarine;
+    }
+    .head-2{
+      background-color: rgb(127, 255, 159);
+    }
+    .head-3{
+      background-color: rgb(227, 255, 127);
+    }
+    .head-4{
+      background-color: rgb(255, 221, 127);
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="head head-1">
+      <spa>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt numquam odit pariatur optio provident ea omnis minima a corrupti impedit amet repellat officia perspiciatis cum maxime repudiandae, delectus vero. Fuga!</spa>
+    </div>
+    <div class="head head-2">
+      <p>Lorem sdsad dolor sit amet consectetur adipisicing elit. Nesciunt numquam odit pariatur optio provident ea omnis minima a corrupti impedit amet repellat officia perspiciatis cum maxime repudiandae, delectus vero. Fuga!</p>
+    </div>
+    <div class="head head-3">
+      <p>Lorem sdsad dolor sit amet consectetur adipisicing elit. Nesciunt numquam odit pariatur optio provident ea omnis minima a corrupti impedit amet repellat officia perspiciatis cum maxime repudiandae, delectus vero. Fuga!</p>
+    </div>
+    <div class="head head-4">
+      <p>Lorem sdsad dolor sit amet consectetur adipisicing elit. Nesciunt numquam odit pariatur optio provident ea omnis minima a corrupti impedit amet repellat officia perspiciatis cum maxime repudiandae, delectus vero. Fuga!</p>
+    </div>
+  </div>
+  <div class="head-5">
+    <p>Lorem sdsad dolor sit amet consectetur adipisicing elit. Nesciunt numquam odit pariatur optio provident ea omnis minima a corrupti impedit amet repellat officia perspiciatis cum maxime repudiandae, delectus vero. Fuga!</p>
+  </div>
+  
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline();
+    const mainW = document.querySelector('.main').offsetWidth;
+    console.log(mainW);
+    tl.fromTo('.head-2', { y:'100%'},{y:'-100%'})
+      .to('.head-2 p', 
+      {
+        backgroundColor: 'blue',
+        padding: '2rem',
+        color: 'white',
+        fontFamily: 'Poppins',
+        duration: 1,
+      })
+      .to('.head-2 p', 
+      {
+        backgroundColor: 'white',
+        padding: '4rem',
+        color: 'green',
+        fontFamily: 'Poppins',
+        duration: 1,
+      })
+      .to('.head-2 p', 
+      {
+        textIndent: '1rem',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 8,
+        backgroundColor: 'white',
+        padding: '4rem',
+        color: 'green',
+        fontFamily: 'Poppins',
+        duration: 1,
+        y: 100
+      })
+      .to('.head-2 p', 
+      {
+        textIndent: '1rem',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 8,
+        backgroundColor: 'white',
+        padding: '4rem',
+        color: 'green',
+        fontFamily: 'Poppins',
+        duration: 1,
+        y: 100
+      })
+      .fromTo('.head-3', { y:'-200%', x: '100%'},{x: 0})
+      .fromTo('.head-4', { y:'-300%', x: '-100%'},{x: 0})
+
+    ScrollTrigger.create({
+      animation: tl,
+      trigger: 'body',
+      start: 'top top',
+      end: mainW/2,
+      pin: true,
+      scrub: true
+
+    })
+    gsap
+    // gsap.to('.head-1', {
+    //   x: "-100vw",
+    //   duration: 1,
+    //   scrollTrigger: {
+    //     trigger: '.head-1',
+    //     scrub: true,
+    //     pin: true
+    //   }
+    // })
+    // gsap.from('.head-2', {
+    //   y: '+100%',
+    //   x: "+100%",
+    //   duration: 1,
+    //   scrollTrigger: {
+    //     trigger: '.head-1',
+    //     scrub: true,
+    //     pin: true
+    //   }
+    // })
+  </script>
+</body>
+</html>
