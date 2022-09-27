@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberPC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link href="http://fonts.cdnfonts.com/css/hacked" rel="stylesheet"> -->
+    <style>
+        @font-face {
+            font-family: 'HACKED';
+            font-style: normal;
+            font-weight: 400;
+            src: local('HACKED'), url('https://fonts.cdnfonts.com/s/20336/HACKED_Title.woff') format('woff');
+        }
+
+        .hacked {
+            font-family: 'HACKED';
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Alert-popup -->
+    <div id="info-popup" class="fixed inset-x-0 bottom-0 px-4 pb-3 z-50">
+        <div class="relative px-4 py-3 text-white bg-zinc-900 rounded-lg pr-14">
+            <p class="text-sm font-medium text-left sm:text-center">
+                На данный момент у нас нет офиса
+
+                <a class="underline" href="/alpinejs"> Подробнее &rarr; </a>
+            </p>
+
+            <button onclick="closeInfoPopup()" aria-label="Close" class="absolute p-1 transition -translate-y-1/2 rounded-lg top-1/2 right-4 bg-black/10 hover:bg-black/20">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- navbar -->
+    <header class="fixed top-0 right-0 left-0 bg-white z-50">
+        <div class="flex items-center h-16 max-w-screen-xl gap-8 px-4 mx-auto sm:px-6 lg:px-8">
+            <a class="block text-dark-600" href="/">
+                <span class="sr-only">Home</span>
+                <span class="ml-3 text-xl hacked">CyberPc</span>
+            </a>
+
+            <div class="flex items-center justify-end flex-1 md:justify-between">
+                <nav class="hidden md:block" aria-labelledby="header-navigation">
+                    <h2 class="sr-only" id="header-navigation">Header navigation</h2>
+
+                    <ul class="flex items-center gap-6 text-sm">
+                        <li>
+                            <a class="text-gray-500 transition hover:text-gray-500/75" href="/">
+                                О нас
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="text-gray-500 transition hover:text-gray-500/75" href="/">
+                                Сервис
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="text-gray-500 transition hover:text-gray-500/75" href="/">
+                                Разработка
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="text-gray-500 transition hover:text-gray-500/75" href="/">
+                                3Д печать
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a class="text-gray-500 transition hover:text-gray-500/75" href="/">
+                                Магазин
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <div class="sm:gap-4 sm:flex">
+                        <a class="block px-5 py-2.5 text-sm font-medium text-white bg-zinc-800 hover:bg-zinc-900 transition rounded-md"
+                            href="/">
+                            Позвонить
+                        </a>
+                    </div>
+
+                    <button
+                        class="block p-2.5 text-gray-600 transition bg-gray-100 rounded md:hidden hover:text-gray-600/75">
+                        <span class="sr-only">Toggle menu</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--Footer-->
+    <footer class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-wrap md:text-left text-center order-first">
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Сервис</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Найстрока ПК</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Ремонт ПК</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Чистка памяти телефона</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Настройка телефонов</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Разработка</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Сайты</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Мобильное приложение</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Письма</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Чат-боты</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">3D печать</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Подробнее</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Расчет стоимости</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Ссылки на модели</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Оборудование</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Подписаться на нас:
+                    </h2>
+                    <div
+                        class="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
+                        <div class="relative w-40 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
+                            <label for="footer-field" class="leading-7 text-sm text-gray-600">Email</label>
+                            <input type="text" id="footer-field" name="footer-field"
+                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-zinc-200 focus:border-zinc-800 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        </div>
+                        <button
+                            class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-zinc-800 border-0 py-2 px-6 focus:outline-none hover:bg-zinc-900 rounded">Готово</button>
+                    </div>
+                    <p class="text-gray-500 text-sm mt-2 md:text-left text-center">Мы постараемся оповещать вас
+                        <br class="lg:block hidden">о любых изменениях
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-100">
+            <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
+                <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-zinc-800 rounded-full" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg> -->
+                    <span class="ml-3 text-xl hacked">CyberPC</span>
+                </a>
+                <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">© 2022 CyberPc —
+                    <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1"
+                        target="_blank">@veg-it</a>
+                </p>
+                <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+                    <a class="text-gray-500">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-500">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5" viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-500">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-500">
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path stroke="none"
+                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                            </path>
+                            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                        </svg>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!--Script close popup-->
+    <script>
+        let infoPopup = document.getElementById('info-popup');
+        const closeInfoPopup = () => {
+            infoPopup.remove();
+        }
+    </script>
+</body>
