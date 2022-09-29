@@ -8,6 +8,8 @@
     <title>CyberPC</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- <link href="http://fonts.cdnfonts.com/css/hacked" rel="stylesheet"> -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <style>
         @font-face {
             font-family: 'HACKED';
@@ -611,5 +613,6 @@
         const closeInfoPopup = () => {
             infoPopup.remove();
         }
+        AOS.init();
     </script>
 </body>
